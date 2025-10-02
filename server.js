@@ -1,4 +1,5 @@
 const app = require("./src/app");
+const express = require("express")
 const winston = require("winston");
 
 app.use(express.json());
