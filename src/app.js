@@ -25,6 +25,9 @@ app.use(
 );
 
 // APIS
+app.get("/", (req, res) => {
+  res.json({ message: "everything is working" });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/food", foodRoutes);
 app.use("/api/foodPartner", foodPartnerRoutes);
