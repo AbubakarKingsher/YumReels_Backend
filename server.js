@@ -1,14 +1,10 @@
 const app = require("./src/app");
-// const winston = require("winston");
+const winston = require("winston");
 
-// const PORT = process.env.PORT || 5000;
+app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello from Vercel + Express!");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, (err) => {
+  if (err) return winston.error("PORT DISCONNECTED");
 });
-
-// app.listen(PORT, (err) => {
-//   if (err) return winston.error("PORT DISCONNECTED");
-// });
-
-module.exports = app;
