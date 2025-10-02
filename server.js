@@ -1,5 +1,8 @@
-const app = require("./src/app")
+const app = require("./src/app");
+const winston = require("winston");
 
-app.listen(3000, (err) => {
-    if (err) return console.log("PORT: NOT CONNECTED")
-})
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, (err) => {
+  if (err) return winston.error("PORT DISCONNECTED");
+});
